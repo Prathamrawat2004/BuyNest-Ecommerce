@@ -1,0 +1,313 @@
+body {
+  overflow-x: hidden;
+  
+}
+
+.hamburg {
+  margin-top: 3px;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  top: 3.8px;
+  z-index: 1000;
+}
+
+.input {
+  border: 2px solid black;
+  padding: 0.8vw 0vw 0.8vw 0.7vw ;
+  margin-left: 0.5vw;
+}
+
+.search {
+  width: 58%;
+  
+}
+
+.items {
+  gap: 35px;
+  list-style: none;
+  max-width: 80%;
+  margin: auto;
+  font-weight: 600;
+  font-size: small;
+
+}
+
+.items-2 {
+  width: 13%;
+}
+
+.UserLogin:hover {
+  /* background-color: gray; */
+  /* color: white; */
+  transform: scale(1.1);
+  transition: all 1s ease-out;
+
+}
+
+.sticky {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure the navbar stays on top */
+  background-color: inherit; /* Matches the background color of your navbar */
+  
+}
+
+.nav-items {
+  max-width: 95vw;
+  margin: 0.1vw auto;
+  margin-top: 0.1vw;
+  
+}
+
+.nav{
+  background-color: black;
+}
+
+
+
+.logo {
+  color: #f1641e;
+}
+
+.UserLogin {
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+hr {
+  height: 2px;
+  background-color: black;
+}
+
+.trends h3 {
+  font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+  font-size: 31.01px;
+  font-weight: 100;
+  line-height: 1.1;
+  margin-top: -15px;
+}
+
+.imgcontainer img {
+  border-radius: 50%;
+  margin-bottom: 3%;
+}
+
+.child {
+  line-height: 0.2;
+  margin-top: -8%;
+}
+
+.trendContainer {
+  margin-top: 3%;
+}
+
+.trend-section p {
+  font-weight: 600;
+}
+
+.trend:hover {
+  /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); */
+  transform: scale(1.1);
+  transition: all 0.1s ease-out;
+  text-decoration: underline;
+  /* Adds an underline on hover */
+  text-decoration-color: black;
+}
+
+.card-item {
+
+  max-width: 95vw;
+  margin: auto;
+
+}
+
+.Card {
+  width: 20%;
+  /* background-color: #f1641e; */
+  border: 1px solid rgb(204, 200, 200);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.Cards {
+  gap: 1.5%;
+}
+
+.Card:hover {
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  transform: scale(1.0);
+  transition: all 0.2s ease-out;
+}
+
+.blog {
+  width: 33%;
+  /* background-color: #f1641e; */
+  border: 1px solid rgb(204, 200, 200);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.blog img {
+  object-fit: cover;
+}
+
+.blog:hover {
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  transform: scale(1.0);
+  transition: all 0.2s ease-out;
+}
+
+.blogs {
+  gap: 1.5%;
+}
+
+.brand {
+  width: 33%;
+  /* background-color: #f1641e; */
+  border: 1px solid rgb(204, 200, 200);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  gap:2.5%
+}
+
+.brand:hover {
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  transform: scale(1.0);
+  transition: all 0.2s ease-out;
+}
+
+.brand{
+  background-color: rgb(238, 238, 243);
+}
+
+.footer{
+  background-color: black;
+}
+
+.footer p{
+  color: white;
+}
+
+.footer ul li a{
+  color: white;
+}
+
+.box{
+  position:absolute;
+  left: 5%;
+  top: 10vh;
+  width: 20%;
+  /* background-color: #f1641e; */
+  border: 1px solid rgb(204, 200, 200);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1000;
+}
+
+
+.no-underline {
+  text-decoration: none;
+}
+
+.vintage-container{
+  max-width: 95%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px
+}
+
+.vintage-container .Card{
+  width: 25%;
+  flex: 1 1 20%;
+}
+
+.first-image{
+  gap: 25px;
+}
+
+.first-content .btn{
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
+.first-content .btn:hover{
+  background-color: gray;
+  color: white;
+  
+}
+
+.short-title {
+  width: 300px; /* Adjust based on your design */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.child2{
+  margin-top: -2%;
+  font-size: small;
+  color:rgb(110, 110, 110);
+}
+
+.button{
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
+.gapper{
+  gap: 11vw;
+}
+
+.border{
+  border: 1px solid white;
+}
+
+.red{
+  color: red;
+}
+
+.borderWhite{
+  border: 2px solid white;
+}
+
+.black{
+  background-color: black
+}
+
+.content ul li{
+  border-bottom: 1px solid black;
+  margin-bottom: 0.5vh;
+}
+
+.content ul li:hover{
+  transform: scale(1.1);
+  transition: all 0.2s ease-out;
+}
+
+.circle{
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 0 2.5px 2.5px 2.5px;
+}
+
+.circle:hover{
+  transform: scale(1.1);
+  transition: all 0.2s ease-out;
+}
+
+
+
+
+@media(max-width:850px) {}
