@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 import Logout from './Logout';
 import { useAuth } from './context/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { addToCart } from "../slices/cartSlice.js";
 
 
 const Arts = () => {
@@ -80,24 +82,31 @@ const Arts = () => {
         navigate(`/search?query=${searchTerm}`);
     };
 
-     // Unsplash api 
-     const [Vintages, setVintages] = useState([]);
+    // Unsplash api 
+    const [Vintages, setVintages] = useState([]);
 
-     // function to fetch results from api
-     const fetchUnsplashImages = async () => {
-         try {
-             const response = await fetch(`https://api.unsplash.com/search/photos?query=paintings&client_id=xOHrHJZjKnryd8O-V-8c-bBVxxxamsk9Tzm5VWdwjhM&per_page=16`);
-             const data = await response.json();
-             setVintages(data.results);
-         } catch (error) {
-             console.log(error);
-         }
-     }
- 
-     // only hit once the api when component mounts
-     useEffect(() => {
-         fetchUnsplashImages();
-     }, []);
+    // function to fetch results from api
+    const fetchUnsplashImages = async () => {
+        try {
+            const response = await fetch(`https://api.unsplash.com/search/photos?query=paintings&client_id=xOHrHJZjKnryd8O-V-8c-bBVxxxamsk9Tzm5VWdwjhM&per_page=16`);
+            const data = await response.json();
+            setVintages(data.results);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // only hit once the api when component mounts
+    useEffect(() => {
+        fetchUnsplashImages();
+    }, []);
+
+
+    const dispatch = useDispatch();
+    const handleAddToCart = (image) => {
+        dispatch(addToCart(image));
+        navigate.push('/cart');
+    }
 
     return (
         <>
@@ -172,7 +181,7 @@ const Arts = () => {
 
                         </div>
 
-                        <Link to="/cart"><div className="kart content">
+                        <Link to="/cart"><div className="kart content cart-decoration">
                             <BsCart className={`${darkmode ? "text-white" : ""}`} />
                         </div></Link>
                     </div>
@@ -216,7 +225,7 @@ const Arts = () => {
                             <h5 className='mb-2 mt-2'>$800</h5>
                             <div className="d-flex justify-content-between align-items-center gapper">
                                 <div className={`btn btn-secondary rounded-5 button mx-1 ${darkmode ? "text-white border" : ""}`}>Add to Cart</div>
-                                <div className='circle'><BsCart className={`${darkmode ? "text-white" : ""}`} /></div>
+                                <div className='circle' onClick={() => handleAddToCart(image)}><BsCart className={`${darkmode ? "text-white" : ""}`} /></div>
                             </div>
                         </div>
 

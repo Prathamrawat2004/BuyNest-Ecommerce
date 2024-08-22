@@ -13,6 +13,7 @@ import { Toaster } from "react-hot-toast";
 import SearchRes from './Components/SearchRes';
 import NotFound from './Components/NotFound';
 import { redirect } from 'react-router-dom';
+import Cart from './Components/Cart';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/search' element={<SearchRes />}></Route>
         <Route path='/notfound' element={<NotFound/>}></Route>
+        <Route path='/cart' element={<Cart/>}></Route>
        
       </Routes>
       {/* <Navigate to="/notfound"/> */}

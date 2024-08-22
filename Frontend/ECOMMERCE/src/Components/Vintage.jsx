@@ -182,7 +182,7 @@ const Vintage = () => {
 
                         </div>
 
-                        <Link to="/cart"><div className="kart content">
+                        <Link to="/cart"><div className="kart content cart-decoration">
                             <BsCart className={`${darkmode ? "text-white" : ""}`} />
                         </div></Link>
                     </div>

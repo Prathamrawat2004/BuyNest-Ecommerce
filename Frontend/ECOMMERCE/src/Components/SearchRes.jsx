@@ -13,6 +13,8 @@ import Logout from './Logout';
 import { useLocation } from 'react-router-dom';
 import { IoMdStar } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../slices/cartSlice.js";
 
 const SearchRes = () => {
     const [authUser, setAuthUser] = useAuth();
@@ -87,6 +89,12 @@ const SearchRes = () => {
         }
     }, [location.search]);
 
+    const dispatch = useDispatch();
+    const handleAddToCart = (image) => {
+        dispatch(addToCart(image));
+        navigate.push('/cart');
+    }
+
     return (
         <>
             {/* navbar */}
@@ -160,9 +168,9 @@ const SearchRes = () => {
 
                         </div>
 
-                        <div className="kart content">
+                        <Link to="/cart"><div className="kart content cart-decoration">
                             <BsCart className={`${darkmode ? "text-white" : ""}`} />
-                        </div>
+                        </div></Link>
                     </div>
 
                 </div >
@@ -210,7 +218,7 @@ const SearchRes = () => {
                             <h5 className='mb-2 mt-2'>$800</h5>
                             <div className="d-flex justify-content-between align-items-center gapper">
                                 <div className={`btn btn-secondary rounded-5 button mx-1 ${darkmode ? "text-white border" : ""}`}>Add to Cart</div>
-                                <div className='circle'><BsCart className={`${darkmode ? "text-white" : ""}`} /></div>
+                                <div className='circle' onClick={() => handleAddToCart(image)}><BsCart className={`${darkmode ? "text-white" : ""}`} /></div>
                             </div>
                         </div>
 

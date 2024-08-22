@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Logout from './Logout';
 import { useAuth } from './context/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
@@ -81,6 +82,8 @@ const Navbar = () => {
         e.preventDefault();
         navigate(`/search?query=${searchTerm}`);
     };
+
+    const { cartTotalQuantity } = useSelector(state => state.cart);
 
 
 
@@ -157,7 +160,7 @@ const Navbar = () => {
 
                         </div>
 
-                        <Link to="/cart"><div className="kart content">
+                        <Link to="/cart"><div className="kart content cart-decoration">
                             <BsCart className={`${darkmode ? "text-white" : ""}`} />
                         </div></Link>
                     </div>
@@ -351,7 +354,7 @@ const Navbar = () => {
                         <div id="carouselExampleRide" className="carousel slide" data-bs-ride="true">
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
-                                    <div className="d-flex">
+                                    <div className={`d-flex ${darkmode ? "text-dark" : ""}`}>
                                         <div className="brand me-3">
                                             <div className="brand-img">
                                                 <img src="/img/apple.jfif" height={220} width={450} alt="" />
@@ -381,7 +384,7 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="carousel-item">
+                                <div className={`carousel-item ${darkmode ? "text-dark" : ""}`}>
                                     <div className="d-flex">
                                         <div className="brand me-3">
                                             <div className="brand-img">
