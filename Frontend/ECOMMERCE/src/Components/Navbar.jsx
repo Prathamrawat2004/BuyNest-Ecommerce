@@ -41,7 +41,7 @@ const Navbar = () => {
     // sticky navbar
     const [isSticky, setSticky] = useState(false);
 
-    // Function to handle scroll event and toggle sticky class
+    // Function to handle scroll event and toggle sticky className
     const handleScroll = () => {
         if (window.scrollY > 0) {
             setSticky(true);
@@ -92,13 +92,13 @@ const Navbar = () => {
             {/* navbar */}
             <div className={`my-3 row   ${isSticky && darkmode ? "sticky black" : "" || isSticky ? 'sticky bg-white alligner' : ''}`}>
                 <div className="nav-items d-flex justify-content-between align-items-center">
-                    <Link to="/" className='no-underline'>
+                    <Link to="/" className='no-underline same'>
                         <div className="logo">
                             <h3>BuyNest</h3>
                         </div>
                     </Link>
 
-                    <div className="categories" onClick={modalOpen}>
+                    <div className="categories same" onClick={modalOpen}>
                         <div className={`d-flex ${darkmode ? "text-white" : ""}`}>
                             <RxHamburgerMenu className="hamburg" />
                             <h6 className="mx-1">Categories</h6>
@@ -140,34 +140,34 @@ const Navbar = () => {
                     </div>
 
                     {authUser ? (<Logout dark={darkmode} />) : (<Link to="/login" className="no-underline text-black">
-                        <div className={`${darkmode ? "text-white" : "UserLogin content"}`}>
+                        <div className={`${darkmode ? "text-white" : "UserLogin content"} same`}>
                             <span>Login</span>
                         </div></Link>)}
                     <div className="d-flex justify-content-between align-items-center items-2">
 
-                        <div className="flag content">
+                        <div className="flag content same">
                             <img src="/img/Flag.jfif" height={15} alt="indian flag" />
                         </div>
 
-                        <div className="theme content" onClick={toggleTheme}>
+                        <div className="theme content same" onClick={toggleTheme}>
                             {darkmode ? <FaRegSun className={`${darkmode ? "text-white" : ""}`} />
                                 : <FaRegMoon />}
 
                         </div>
 
-                        <div className="giftIcon content">
+                        <div className="giftIcon content same">
                             <BsGift className={`${darkmode ? "text-white" : ""}`} />
 
                         </div>
 
-                        <Link to="/cart"><div className="kart content cart-decoration">
-                            <BsCart className={`${darkmode ? "text-white" : ""}`} />
-                        </div></Link>
+                        <div className="kart content same" onClick={handleButtonClick} >
+                            <Link to="/cart" className='cart-decoration'><BsCart className={`${darkmode ? "text-white" : ""}`} /></Link>
+                        </div>
                     </div>
 
                 </div >
                 <div className="content">
-                    <div className={`items d-flex items justify-content-center my-2 mb-3  ${darkmode ? "text-white" : ""}`}>
+                    <div className={`items d-flex justify-content-center my-2 mb-3  ${darkmode ? "text-white" : ""}`}>
                         <li><span><GoGift /></span> Gift Mode</li>
                         <li>Shop Birthday Gifts</li>
                         <li>Home Favourites</li>
@@ -433,15 +433,15 @@ const Navbar = () => {
             </div>
 
             <div className="footer">
-                <footer class="py-3 mt-4 border-top">
-                    <ul class="nav justify-content-center pb-2 mb-3">
-                        <li class="nav-item"><a href="#" class="nav-link px-2 ">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 ">Features</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 ">Pricing</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 ">FAQs</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 ">About</a></li>
+                <footer className="py-3 mt-4 border-top">
+                    <ul className="nav justify-content-center pb-2 mb-3">
+                        <li className="nav-item"><a href="#" className="nav-link px-2 ">Home</a></li>
+                        <li className="nav-item"><a href="#" className="nav-link px-2 ">Features</a></li>
+                        <li className="nav-item"><a href="#" className="nav-link px-2 ">Pricing</a></li>
+                        <li className="nav-item"><a href="#" className="nav-link px-2 ">FAQs</a></li>
+                        <li className="nav-item"><a href="#" className="nav-link px-2 ">About</a></li>
                     </ul>
-                    <p class="text-center">&copy; 2024 BuyNest, Inc</p>
+                    <p className="text-center">&copy; 2024 BuyNest, Inc</p>
                 </footer>
             </div>
 

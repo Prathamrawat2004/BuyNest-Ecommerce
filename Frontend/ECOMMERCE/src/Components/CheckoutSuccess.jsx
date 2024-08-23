@@ -6,20 +6,15 @@ import { FaRegMoon } from "react-icons/fa";
 import { GoGift } from "react-icons/go";
 import { FaRegSun } from "react-icons/fa";
 import { BsCart } from "react-icons/bs";
-import { IoMdStar } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Logout from './Logout';
 import { useAuth } from './context/AuthProvider';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from "react-redux";
-import { addToCart } from "../slices/cartSlice.js";
+import { useSelector } from 'react-redux';
 
-
-
-const Vintage = () => {
+const CheckoutSuccess = () => {
     const [authUser, setAuthUser] = useAuth();
     const navigate = useNavigate();
-
 
     // theme changing
     const [darkmode, setdarkmode] = useState(false);
@@ -84,29 +79,8 @@ const Vintage = () => {
         navigate(`/search?query=${searchTerm}`);
     };
 
-    // Unsplash api 
-    const [Vintages, setVintages] = useState([]);
+    const { cartTotalQuantity } = useSelector(state => state.cart);
 
-    // function to fetch results from api
-    const fetchUnsplashImages = async () => {
-        try {
-            const response = await fetch(`https://api.unsplash.com/search/photos?query=lockets&client_id=xOHrHJZjKnryd8O-V-8c-bBVxxxamsk9Tzm5VWdwjhM&per_page=16`);
-            const data = await response.json();
-            setVintages(data.results);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    // only hit once the api when component mounts
-    useEffect(() => {
-        fetchUnsplashImages();
-    }, []);
-
-    const dispatch = useDispatch();
-    const handleAddToCart = (image) => {
-        dispatch(addToCart(image));
-    }
 
     return (
         <>
@@ -199,43 +173,10 @@ const Vintage = () => {
                 <hr className={darkmode ? "text-white" : ""} />
             </div >
 
-            <div className={`first-image d-flex card-item ${darkmode ? "text-white" : ""}`}>
-                <img src="/img/vintage.jfif" className='rounded' height={220} width={350} alt="" />
-                <div className="first-content">
-                    <span className='mt-3'>RosinessDesigns(1,290)</span>
-                    <h3>Early Vintage Gold filled Padlock Clasp - 1930s Unusual Padlock, Vintage Jewelry</h3>
-                    <h5 className='mb-2'>$800</h5>
-                    <div className={`btn btn-secondary rounded-5 py-3 mt-3 px-3 ${darkmode ? "text-white border" : ""}`}>
-                        Shop this item
-                    </div>
-                </div>
+            <h2 className={`d-flex justify-content-center checkout ${darkmode ? "text-white" : ""} `}>Checkout Success!</h2>
 
-
-            </div>
-            <hr className={darkmode ? "text-white" : ""} />
-            <div className="vintage-container mt-5 d-flex justify-content-center">
-                {Vintages.map((image) => (
-                    <div className={`Card m-2 ${darkmode ? "text-white" : ""}`} key={image.id}>
-                        <div className="card-img">
-                            <img src={image.urls.regular} height={200} width={300} alt={image.alt_description} />
-                        </div>
-                        <div className="card-title pt-1 pb-3 mx-1 d-flex flex-column align-items-start">
-                            <h6 className='short-title '>{image.slug}</h6>
-                            <span className={`d-flex align-items-center child2 ${darkmode ? "text-white" : ""}`}>4.9 <IoMdStar />(259) Ad by BuyNest seller</span>
-                            <h5 className='mb-2 mt-2'>$800</h5>
-                            <div className="d-flex justify-content-between align-items-center gapper">
-                                <div className={`btn btn-secondary rounded-5 button mx-1 ${darkmode ? "text-white border" : ""}`}>Add to Cart</div>
-                                <div className='circle' onClick={() => handleAddToCart(image)}><BsCart className={`${darkmode ? "text-white" : ""}`} /></div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                ))}
-            </div>
-
-            <div className="footer">
-                <footer class="py-3 mt-4 border-top">
+            <div className="footer checkfooter">
+                <footer class="py-3 border-top">
                     <ul class="nav justify-content-center pb-2 mb-3">
                         <li class="nav-item"><a href="#" class="nav-link px-2 ">Home</a></li>
                         <li class="nav-item"><a href="#" class="nav-link px-2 ">Features</a></li>
@@ -246,8 +187,10 @@ const Vintage = () => {
                     <p class="text-center">&copy; 2024 BuyNest, Inc</p>
                 </footer>
             </div>
+
         </>
+
     )
 }
 
-export default Vintage;
+export default CheckoutSuccess;

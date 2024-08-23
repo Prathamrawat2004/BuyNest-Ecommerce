@@ -181,9 +181,9 @@ const Arts = () => {
 
                         </div>
 
-                        <Link to="/cart"><div className="kart content cart-decoration">
-                            <BsCart className={`${darkmode ? "text-white" : ""}`} />
-                        </div></Link>
+                        <div className="kart content" onClick={handleButtonClick} >
+                            <Link to="/cart" className='cart-decoration'><BsCart className={`${darkmode ? "text-white" : ""}`} /></Link>
+                        </div>
                     </div>
 
                 </div >

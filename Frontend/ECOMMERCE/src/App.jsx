@@ -12,13 +12,11 @@ import Signup from './Components/Signup';
 import { Toaster } from "react-hot-toast";
 import SearchRes from './Components/SearchRes';
 import NotFound from './Components/NotFound';
-import { redirect } from 'react-router-dom';
 import Cart from './Components/Cart';
+import CheckoutSuccess from './Components/CheckoutSuccess';
 
 
 function App() {
-
-
   return (
     <>
       <Routes>
@@ -32,11 +30,10 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/search' element={<SearchRes />}></Route>
-        <Route path='/notfound' element={<NotFound/>}></Route>
-        <Route path='/cart' element={<Cart/>}></Route>
-       
+        <Route path='*' element={<NotFound />}></Route>
+        <Route path='/cart' element={<Cart />}></Route>
+        <Route path='/checkout-success' element={<CheckoutSuccess />}></Route>
       </Routes>
-      {/* <Navigate to="/notfound"/> */}
       <Toaster />
 
     </>

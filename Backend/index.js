@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 const MongoDbURI = "mongodb://localhost:27017/ECOMMERCE";
 import usersRoute from "./Routes/Users.route.js";
 import cors from "cors";
+import stripe from "./Routes/Stripe.js";
 
 
 
@@ -28,6 +29,7 @@ mongoose.connect(MongoDbURI, {
 
 // routes
 app.use("/User",usersRoute);
+app.use("/Stripe",stripe);
 
 
 

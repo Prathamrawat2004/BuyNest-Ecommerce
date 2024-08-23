@@ -296,7 +296,7 @@ hr {
   margin-bottom: 0.5vh;
 }
 
-.content ul li:hover {
+.content li:hover {
   transform: scale(1.1);
   transition: all 0.2s ease-out;
 }
@@ -417,5 +417,29 @@ hr {
   color: black;
 }
 
+.checkout{
+  margin-top: 10rem;
+}
 
-@media(max-width:850px) {}
+.checkfooter{
+  margin-top: 11rem;
+}
+
+
+@media(max-width:1000px) {
+  .nav-items{
+    margin-bottom: 2rem;
+  }
+
+  .items li{
+    display: none;
+  }
+
+  .search{
+    position: absolute;
+    top:11vh;
+    left: 22vw;
+  }
+ 
+
+}

@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import Logout from './Logout';
 import { useAuth } from './context/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import PayButton from "./PayButton.jsx";
 
 
 
@@ -188,9 +189,9 @@ const Cart = () => {
 
             </div>
 
-            <Link to="/cart"><div className="kart content cart-decoration">
-              <BsCart className={`${darkmode ? "text-white" : ""}`} />
-            </div></Link>
+            <div className="kart content" onClick={handleButtonClick} >
+              <Link to="/cart" className='cart-decoration'><BsCart className={`${darkmode ? "text-white" : ""}`} /></Link>
+            </div>
           </div>
 
         </div >
@@ -229,7 +230,7 @@ const Cart = () => {
               {cart.cartItems?.map((cartItem, index) =>
               (<div className='cart-item' key={cartItem.id}>
                 <div className="cart-product">
-                  <img src={cartItem.urls.regular} height={120} alt={cartItem.alt_description} />
+                  <img src={cartItem.urls.regular} height={120} width={120} alt={cartItem.alt_description} />
                   <div>
                     <h3>{cartItem.tags[1].title}</h3>
                     <p>{cartItem.alt_description}</p>
@@ -257,7 +258,7 @@ const Cart = () => {
                   <span className='amount'>${cart.cartTotalAmount}</span>
                 </div>
                 <p>Taxes and shipping calculated at checkout</p>
-                <button className='btn btn-primary'>Check out</button>
+                <PayButton cartItems={cart.cartItems} />
               </div>
             </div>
           </div>)}
