@@ -113,12 +113,12 @@ const Gifts = () => {
             <div className={`my-3 row   ${isSticky && darkmode ? "sticky black" : "" || isSticky ? 'sticky bg-white alligner' : ''}`}>
                 <div className="nav-items d-flex justify-content-between align-items-center">
                     <Link to="/" className='no-underline'>
-                        <div className="logo">
+                        <div className="logo topper">
                             <h3>BuyNest</h3>
                         </div>
                     </Link>
 
-                    <div className="categories" onClick={modalOpen}>
+                    <div className="categories topper topper-1" onClick={modalOpen}>
                         <div className={`d-flex ${darkmode ? "text-white" : ""}`}>
                             <RxHamburgerMenu className="hamburg" />
                             <h6 className="mx-1">Categories</h6>
@@ -160,10 +160,10 @@ const Gifts = () => {
                     </div>
 
                     {authUser ? (<Logout dark={darkmode} />) : (<Link to="/login" className="no-underline text-black">
-                        <div className={`${darkmode ? "text-white" : "UserLogin content"}`}>
+                        <div className={`${darkmode ? "text-white" : "UserLogin content"} topper topper-1`}>
                             <span>Login</span>
                         </div></Link>)}
-                    <div className="d-flex justify-content-between align-items-center items-2">
+                    <div className="d-flex justify-content-between align-items-center items-2 topper topper-1 same">
 
                         <div className="flag content">
                             <img src="/img/Flag.jfif" height={15} alt="indian flag" />
@@ -195,7 +195,7 @@ const Gifts = () => {
                         <li>Registry</li>
                     </div>
                 </div>
-                <hr className={darkmode ? "text-white" : ""} />
+                <hr className={`${darkmode ? "text-white" : ""} line`} />
             </div >
 
             <div className={`first-image d-flex card-item ${darkmode ? "text-white" : ""}`}>
@@ -212,7 +212,7 @@ const Gifts = () => {
 
             </div>
             <hr className={darkmode ? "text-white" : ""} />
-            <div className="vintage-container mt-5 d-flex justify-content-center">
+            <div className="vintage-container mt-5 d-flex justify-content-center dynamic-cards">
                 {Vintages.map((image) => (
                     <div className={`Card m-2 ${darkmode ? "text-white" : ""}`} key={image.id}>
                         <div className="card-img">
@@ -224,7 +224,7 @@ const Gifts = () => {
                             <h5 className='mb-2 mt-2'>$800</h5>
                             <div className="d-flex justify-content-between align-items-center gapper">
                                 <div className={`btn btn-secondary rounded-5 button mx-1 ${darkmode ? "text-white border" : ""}`}>Add to Cart</div>
-                                <div className='circle' onClick={() => handleAddToCart(image)}><BsCart className={`${darkmode ? "text-white" : ""}`} /></div>
+                                <div className={`${darkmode ? "text-white circle-white" : "circle"} kart-icon`} onClick={() => handleAddToCart(image)}><BsCart  /></div>
                             </div>
                         </div>
 

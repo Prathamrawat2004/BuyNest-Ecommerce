@@ -92,16 +92,16 @@ const Navbar = () => {
             {/* navbar */}
             <div className={`my-3 row   ${isSticky && darkmode ? "sticky black" : "" || isSticky ? 'sticky bg-white alligner' : ''}`}>
                 <div className="nav-items d-flex justify-content-between align-items-center">
-                    <Link to="/" className='no-underline same'>
-                        <div className="logo">
+                    <Link to="/" className='no-underline'>
+                        <div className="logo topper">
                             <h3>BuyNest</h3>
                         </div>
                     </Link>
 
-                    <div className="categories same" onClick={modalOpen}>
+                    <div className="categories topper " onClick={modalOpen}>
                         <div className={`d-flex ${darkmode ? "text-white" : ""}`}>
                             <RxHamburgerMenu className="hamburg" />
-                            <h6 className="mx-1">Categories</h6>
+                            <span className="mx-1">Categories</span>
                         </div>
                     </div>
                     {isModal && <div className={`box ${darkmode ? "text-white bg-dark" : "text-white bg-dark"}`}>
@@ -130,7 +130,7 @@ const Navbar = () => {
 
                     <div className="search" onClick={handleButtonClick} >
                         {/* both if the user clicks on enter or if the user clicks on the icon */}
-                        <form className="input-group" onSubmit={handleSearch}>
+                        <form className="input-group form" onSubmit={handleSearch}>
                             <div className="input-group">
                                 <input type="text" className="form-control rounded-5 input" placeholder="Search for anything" aria-label="Search" aria-describedby="search-icon" value={searchTerm} onChange={(e) => setsearchTerm(e.target.value)} />
 
@@ -139,28 +139,28 @@ const Navbar = () => {
                         </form>
                     </div>
 
-                    {authUser ? (<Logout dark={darkmode} />) : (<Link to="/login" className="no-underline text-black">
-                        <div className={`${darkmode ? "text-white" : "UserLogin content"} same`}>
+                    {authUser ? (<Logout  dark={darkmode} />) : (<Link to="/login" className="no-underline text-black">
+                        <div className={`${darkmode ? "text-white" : "UserLogin content"} topper topper-1`}>
                             <span>Login</span>
                         </div></Link>)}
-                    <div className="d-flex justify-content-between align-items-center items-2">
+                    <div className="d-flex justify-content-between align-items-center items-2 topper topper-1 same">
 
-                        <div className="flag content same">
+                        <div className="flag content">
                             <img src="/img/Flag.jfif" height={15} alt="indian flag" />
                         </div>
 
-                        <div className="theme content same" onClick={toggleTheme}>
+                        <div className="theme content" onClick={toggleTheme}>
                             {darkmode ? <FaRegSun className={`${darkmode ? "text-white" : ""}`} />
                                 : <FaRegMoon />}
 
                         </div>
 
-                        <div className="giftIcon content same">
+                        <div className="giftIcon content">
                             <BsGift className={`${darkmode ? "text-white" : ""}`} />
 
                         </div>
 
-                        <div className="kart content same" onClick={handleButtonClick} >
+                        <div className="kart content" onClick={handleButtonClick} >
                             <Link to="/cart" className='cart-decoration'><BsCart className={`${darkmode ? "text-white" : ""}`} /></Link>
                         </div>
                     </div>
@@ -175,7 +175,7 @@ const Navbar = () => {
                         <li>Registry</li>
                     </div>
                 </div>
-                <hr className={darkmode ? "text-white" : ""} />
+                <hr className={`${darkmode ? "text-white" : ""} line`} />
             </div >
 
 
@@ -258,8 +258,8 @@ const Navbar = () => {
             {/* section-2 */}
             <div div className={`Categories card-item mt-5 ${darkmode ? "text-white" : ""}`}>
                 <h3 className='mb-3'>Shop our popular gift categories</h3>
-                <div className="Cards d-flex g-2">
-                    <div className="Card">
+                <div className="Cards d-flex g-2 gift-cards">
+                    <div className="Card gift-card">
                         <div className="card-img">
                             <img src="/img/anniversary.jfif" height={200} width={255} alt="" />
                         </div>
@@ -268,7 +268,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className="Card">
+                    <div className="Card gift-card">
                         <div className="card-img">
                             <img src="/img/himgift.jfif" height={200} width={255} alt="" />
                         </div>
@@ -277,7 +277,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className="Card">
+                    <div className="Card gift-card">
                         <div className="card-img">
                             <img src="/img/hergift.jfif" height={200} width={255} alt="" />
                         </div>
@@ -286,7 +286,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className="Card">
+                    <div className="Card gift-card">
                         <div className="card-img">
                             <img src="/img/personalised.jfif" height={200} width={255} alt="" />
                         </div>
@@ -295,7 +295,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className="Card">
+                    <div className="Card gift-card">
                         <div className="card-img">
                             <img src="/img/wedding.jfif" height={200} width={255} alt="" />
                         </div>
@@ -308,7 +308,7 @@ const Navbar = () => {
                 {/* section-3 */}
                 <div className="blog-Container mt-5">
                     <h3 className='mb-3'>Fresh from the blog</h3>
-                    <div className="blogs d-flex">
+                    <div className="blogs d-flex blog-cards">
                         <div className="blog">
                             <div className="blog-img">
                                 <img src="/img/comfy.jfif" height={350} width={420} alt="" />
@@ -317,7 +317,7 @@ const Navbar = () => {
                                 <span className='mx-3 mb-3'>Shopping Guides</span>
                                 <h5 className='mx-3 mb-3'>9 Comfy Throws for Cosy Autumn Vibes</h5>
                                 <span className='mx-3'>Embrace the snuggling season with stylish throws</span>
-                                <p className='mx-3 '>that will warm your hearts.</p>
+                                <p className=''>that will warm your hearts.</p>
                             </div>
                         </div>
 
@@ -329,7 +329,7 @@ const Navbar = () => {
                                 <span className='mx-3 mb-3'>Shopping Guides</span>
                                 <h5 className='mx-3 mb-3'>Beautiful Bags That Express Your Style</h5>
                                 <span className='mx-3'>Amp up your fashion game with bags that perfectly</span>
-                                <p className='mx-3 '>match your aesthetic.</p>
+                                <p className=''>match your aesthetic.</p>
                             </div>
                         </div>
 
@@ -340,8 +340,8 @@ const Navbar = () => {
                             <div className="card-body pt-3 pb-3 d-flex flex-column align-items-start">
                                 <span className='mx-3 mb-3'>Gift Ideas</span>
                                 <h5 className='mx-3 mb-3'>The Best Gift Ideas for Kids of All Ages</h5>
-                                <span className='mx-3'>Embrace the snuggling season with stylish throws</span>
-                                <p className='mx-3 '>that will warm your hearts.</p>
+                                <span className='mx-3'>Shop the sweetest surprises for little</span>
+                                <p className=''>ones in your family.</p>
                             </div>
                         </div>
                     </div>
@@ -406,7 +406,7 @@ const Navbar = () => {
                                         </div>
                                         <div className="brand me-3">
                                             <div className="brand-img">
-                                                <img src="/img/deo.jfif" height={220} width={450} alt="" />
+                                                <img src="/img/deo.jfif" height={220} alt="" />
                                             </div>
                                             <div className="brand-title pt-2 d-flex justify-content-between mx-2">
                                                 <h5>From $300</h5>

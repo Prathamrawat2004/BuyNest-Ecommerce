@@ -27,7 +27,7 @@ const Logout = ({ dark }) => {
         }
     }
     return (
-        <button className={`btn mx-2 ${dark ? "text-white" : ""}`} onClick={handleLogout}  >Logout</button>
+        <button className={`btn mx-2 ${dark ? "text-white" : "logout"}`} onClick={handleLogout}  >Logout</button>
     )
 
 }

@@ -92,12 +92,12 @@ const Signup = () => {
             <div className={`my-3 row  ${isSticky && darkmode ? "sticky nav" : "" || isSticky ? 'sticky bg-white' : ''}`}>
                 <div className="nav-items d-flex justify-content-between align-items-center">
                     <Link to="/" className='no-underline'>
-                        <div className="logo">
+                        <div className="logo topper">
                             <h3>BuyNest</h3>
                         </div>
                     </Link>
 
-                    <div className="categories" onClick={modalOpen}>
+                    <div className="categories topper topper-1" onClick={modalOpen}>
                         <div className={`d-flex ${darkmode ? "text-white" : ""}`}>
                             <RxHamburgerMenu className="hamburg" />
                             <h6 className="mx-1">Categories</h6>
@@ -135,10 +135,10 @@ const Signup = () => {
                     </div>
 
                     <Link to="/login" className="no-underline text-black">
-                        <div className={`${darkmode ? "text-white" : "UserLogin content"}`}>
+                        <div className={`${darkmode ? "text-white" : "UserLogin content"} topper topper-1`}>
                             <span>Login</span>
                         </div></Link>
-                    <div className="d-flex justify-content-between align-items-center items-2">
+                    <div className="d-flex justify-content-between align-items-center items-2 topper topper-1 same">
 
                         <div className="flag content">
                             <img src="/img/Flag.jfif" height={15} alt="indian flag" />
@@ -170,7 +170,7 @@ const Signup = () => {
                         <li>Registry</li>
                     </div>
                 </div>
-                <hr className={darkmode ? "text-white" : ""} />
+                <hr className={`${darkmode ? "text-white" : ""} line`} />
             </div>
             <div className='container border shadow rounded d-flex flex-md-column justify-content-center align-items-center col-md-4 mt-5'>
                 <div className="container">

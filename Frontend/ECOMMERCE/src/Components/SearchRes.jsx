@@ -58,6 +58,15 @@ const SearchRes = () => {
         };
     }, []);
 
+    const handleButtonClick = () => {
+        if (authUser) {
+            navigate(path);
+
+        } else {
+            navigate("/signup");
+        }
+    }
+
 
 
     // targeting search input
@@ -101,12 +110,12 @@ const SearchRes = () => {
             <div className={`my-3 row   ${isSticky && darkmode ? "sticky black" : "" || isSticky ? 'sticky bg-white alligner' : ''}`}>
                 <div className="nav-items d-flex justify-content-between align-items-center">
                     <Link to="/" className='no-underline'>
-                        <div className="logo">
+                        <div className="logo topper">
                             <h3>BuyNest</h3>
                         </div>
                     </Link>
 
-                    <div className="categories" onClick={modalOpen}>
+                    <div className="categories topper topper-1" onClick={modalOpen}>
                         <div className={`d-flex ${darkmode ? "text-white" : ""}`}>
                             <RxHamburgerMenu className="hamburg" />
                             <h6 className="mx-1">Categories</h6>
@@ -148,10 +157,10 @@ const SearchRes = () => {
                     </div>
 
                     {authUser ? (<Logout dark={darkmode} />) : (<Link to="/login" className="no-underline text-black">
-                        <div className={`${darkmode ? "text-white" : "UserLogin content"}`}>
+                        <div className={`${darkmode ? "text-white" : "UserLogin content"} topper topper-1`}>
                             <span>Login</span>
                         </div></Link>)}
-                    <div className="d-flex justify-content-between align-items-center items-2">
+                    <div className="d-flex justify-content-between align-items-center items-2  topper topper-1 same">
 
                         <div className="flag content">
                             <img src="/img/Flag.jfif" height={15} alt="indian flag" />
@@ -183,7 +192,7 @@ const SearchRes = () => {
                         <li>Registry</li>
                     </div>
                 </div>
-                <hr className={darkmode ? "text-white" : ""} />
+                <hr className={`${darkmode ? "text-white" : ""} line`} />
             </div>
 
 
