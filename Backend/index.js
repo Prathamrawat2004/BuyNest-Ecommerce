@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-const MongoDbURI = "mongodb://localhost:27017/ECOMMERCE";
+const MongoDbURI = "mongodb+srv://prathamrawat2004:PrathamRawat@cluster0.o8jgd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 import usersRoute from "./Routes/Users.route.js";
 import cors from "cors";
 import stripe from "./Routes/Stripe.js";
@@ -19,8 +19,6 @@ app.use(express.json());
 
 // connecting to db
 mongoose.connect(MongoDbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
 }).then(()=>{
     console.log("Connected to database");
 }).catch(()=>{
