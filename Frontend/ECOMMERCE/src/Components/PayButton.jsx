@@ -3,7 +3,7 @@ import axios from "axios";
 
 const PayButton = ({ cartItems }) => {
   const handleCheckout = () => {
-    axios.post("https://buynest-24.onrender.com/Stripe/create-checkout-session", { cartItems })
+    axios.post("https://buynest-25.onrender.com/Stripe/create-checkout-session", { cartItems })
       .then((res) => {
         if (res.data?.url) {
           window.location.href = res.data.url; // Redirect to Stripe Checkout
