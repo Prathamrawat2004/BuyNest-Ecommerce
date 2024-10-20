@@ -13,12 +13,21 @@ const app = express();
 dotenv.config();
 const Port = process.env.PORT || 3000;
 
-// CORS options
+const allowedOrigins = ['http://localhost:5173', 'https://frabjous-treacle-d70bd6.netlify.app'];
+
 const corsOptions = {
-    origin: 'https://frabjous-treacle-d70bd6.netlify.app', // frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
-    credentials: true, // Allow credentials 
+  origin: function (origin, callback) {
+    // Allow requests with no 'origin' (like curl or Postman) or requests from allowed origins
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  credentials: true,
 };
+
 
 // middlewares
 app.use(cors(corsOptions));

@@ -30,7 +30,7 @@ const Signup = () => {
         };
 
         try {
-            const res = await axios.post("https://buynest-25.onrender.com/User/signup", userInfo);
+            const res = await axios.post("http://localhost:3000/User/signup", userInfo);
             console.log(res.data);
             if (res.data) {
                 toast.success("Signup successfull!");
