@@ -102,6 +102,7 @@ const Vintage = () => {
   const dispatch = useDispatch();
   const handleAddToCart = (image) => {
     dispatch(addToCart(image));
+    navigate("/cart");
   };
 
   return (

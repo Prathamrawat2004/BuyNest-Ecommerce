@@ -102,7 +102,7 @@ const Arts = () => {
   const dispatch = useDispatch();
   const handleAddToCart = (image) => {
     dispatch(addToCart(image));
-    navigate.push("/cart");
+    navigate("/cart");
   };
 
   return (
