@@ -15,7 +15,7 @@ const Port = process.env.PORT || 3000;
 
 // CORS options
 const corsOptions = {
-    origin: 'https://dynamic-pegasus-a79ad4.netlify.app', // frontend URL
+    origin: 'https://frabjous-treacle-d70bd6.netlify.app', // frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
     credentials: true, // Allow credentials 
 };
