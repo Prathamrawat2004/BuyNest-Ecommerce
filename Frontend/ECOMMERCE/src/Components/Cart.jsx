@@ -231,7 +231,7 @@ const Cart = () => {
                 <div className="cart-product">
                   <img src={cartItem.urls.regular} height={120} width={120} alt={cartItem.alt_description} />
                   <div>
-                    <h3>{cartItem.alt_description}</h3>
+                    
                     <p>{cartItem.alt_description}</p>
                     <button className='btn btn-secondary' onClick={() => handleRemoveFromCart(cartItem)}>Remove</button>
                   </div>
