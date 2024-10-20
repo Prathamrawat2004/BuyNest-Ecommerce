@@ -71,9 +71,7 @@ const Cart = () => {
   };
 
   const handleButtonClick = () => {
-    if (authUser) {
-      navigate(`/search?query=${searchTerm}`);
-    } else {
+    if (!authUser) {
       navigate("/signup");
     }
   };
