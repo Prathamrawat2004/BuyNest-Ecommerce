@@ -13,8 +13,15 @@ const app = express();
 dotenv.config();
 const Port = process.env.PORT || 3000;
 
+// CORS options
+const corsOptions = {
+    origin: 'https://resilient-churros-f1a20d.netlify.app', // frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+    credentials: true, // Allow credentials 
+};
+
 // middlewares
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // connecting to db

@@ -9,7 +9,6 @@ import { FaRegMoon } from "react-icons/fa";
 import { GoGift } from "react-icons/go";
 import { FaRegSun } from "react-icons/fa";
 import { BsCart } from "react-icons/bs";
-import { IoMdStar } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Logout from './Logout';
 import { useAuth } from './context/AuthProvider';

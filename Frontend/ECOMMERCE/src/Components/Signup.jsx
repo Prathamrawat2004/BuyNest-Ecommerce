@@ -30,7 +30,7 @@ const Signup = () => {
         };
 
         try {
-            const res = await axios.post("http://localhost:3000/User/signup", userInfo);
+            const res = await axios.post("https://buynest-ecommerce-final.onrender.com/User/signup", userInfo);
             console.log(res.data);
             if (res.data) {
                 toast.success("Signup successfull!");
@@ -40,7 +40,7 @@ const Signup = () => {
             localStorage.setItem("Users", JSON.stringify(res.data.user));
             setAuthUser(res.data.user);
             navigate('/');
-        } catch {
+        } catch(error) {
             console.log(error);
             toast.error(error.response.data.message);
         }

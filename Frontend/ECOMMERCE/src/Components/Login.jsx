@@ -30,7 +30,7 @@ const Login = () => {
         };
 
         try {
-            const res = await axios.post("http://localhost:3000/User/login", userInfo);
+            const res = await axios.post("https://buynest-ecommerce-final.onrender.com/User/login", userInfo);
             console.log(res.data);
             if (res.data) {
                 toast.success("Login successfull");
