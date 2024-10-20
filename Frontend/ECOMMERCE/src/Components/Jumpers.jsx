@@ -39,7 +39,7 @@ const Jumpers = () => {
   // sticky navbar
   const [isSticky, setSticky] = useState(false);
 
-  // Function to handle scroll event and toggle sticky class
+  // Function to handle scroll event and toggle sticky className
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setSticky(true);
@@ -314,35 +314,35 @@ const Jumpers = () => {
       </div>
 
       <div className="footer">
-        <footer class="py-3 mt-4 border-top">
-          <ul class="nav justify-content-center pb-2 mb-3">
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 ">
+        <footer className="py-3 mt-4 border-top">
+          <ul className="nav justify-content-center pb-2 mb-3">
+            <li className="nav-item">
+              <a href="#" className="nav-link px-2 ">
                 Home
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 ">
+            <li className="nav-item">
+              <a href="#" className="nav-link px-2 ">
                 Features
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 ">
+            <li className="nav-item">
+              <a href="#" className="nav-link px-2 ">
                 Pricing
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 ">
+            <li className="nav-item">
+              <a href="#" className="nav-link px-2 ">
                 FAQs
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 ">
+            <li className="nav-item">
+              <a href="#" className="nav-link px-2 ">
                 About
               </a>
             </li>
           </ul>
-          <p class="text-center">&copy; 2024 BuyNest, Inc</p>
+          <p className="text-center">&copy; 2024 BuyNest, Inc</p>
         </footer>
       </div>
     </>
