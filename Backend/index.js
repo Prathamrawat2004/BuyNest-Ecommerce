@@ -13,7 +13,7 @@ const app = express();
 dotenv.config();
 const Port = process.env.PORT || 3000;
 
-const allowedOrigins = ['http://localhost:5173', 'https://frabjous-treacle-d70bd6.netlify.app'];
+const allowedOrigins = ['http://localhost:5173', 'https://fantastic-starlight-4d40a5.netlify.app'];
 
 const corsOptions = {
   origin: function (origin, callback) {
