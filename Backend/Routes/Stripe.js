@@ -9,7 +9,7 @@ router.post('/create-checkout-session', async (req, res) => {
             price_data: {
                 currency: 'usd',
                 product_data: {
-                    name: item.tags[1].title,
+                    name: item.slug,
                     images: [item.urls.regular],
                     description: item.alt_description,
                     metadata: {
