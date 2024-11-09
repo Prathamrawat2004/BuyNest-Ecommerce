@@ -12,10 +12,9 @@ const app = express();
 dotenv.config();
 const Port = process.env.PORT || 3000;
 
-
 app.use(
   cors({
-    origin: "https://buynest-ecommerce-frontend-27-f9g7.onrender.com",
+    origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Optional: Use if you need cookies/auth headers
   })
