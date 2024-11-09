@@ -12,25 +12,17 @@ const app = express();
 dotenv.config();
 const Port = process.env.PORT || 3000;
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://curious-crumble-65d9e0.netlify.app/",
-];
-
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true,
-};
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "https://buynest-ecommerce-frontend-27-f9g7.onrender.com",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true, // Optional: Use if you need cookies/auth headers
+  })
+);
 
 // middlewares
-app.use(cors(corsOptions));
+
 app.use(express.json());
 
 // connecting to db
