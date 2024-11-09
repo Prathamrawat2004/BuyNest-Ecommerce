@@ -98,7 +98,6 @@ const SearchRes = () => {
   const dispatch = useDispatch();
   const handleAddToCart = (image) => {
     dispatch(addToCart(image));
-    navigate.push("/cart");
   };
 
   return (

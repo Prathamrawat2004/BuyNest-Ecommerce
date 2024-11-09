@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const PayButton = ({ cartItems }) => {
+  const navigate = useNavigate();
   const handleCheckout = () => {
     axios
       .post(
@@ -10,7 +12,7 @@ const PayButton = ({ cartItems }) => {
       )
       .then((res) => {
         if (res.data?.url) {
-          history.push("/checkout-success"); // Redirect to your checkout-success route
+          navigate("/checkout-success"); // Redirect to your checkout-success route
         }
       })
       .catch((err) => console.log(err.message));
