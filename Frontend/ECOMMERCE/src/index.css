@@ -441,6 +441,15 @@ hr {
   top: 90vh;
 }
 
+.LOGO-2 {
+  width: 100vw;
+  text-align: center;
+  font-size: large;
+  
+ 
+  
+}
+
 
 
 @media (min-width: 656px) and (max-width: 1000px) {
@@ -565,6 +574,7 @@ hr {
 
   .hamburg {
     margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   .nav-items {

@@ -94,134 +94,23 @@ const Login = () => {
 
   return (
     <>
-      {/* navbar */}
       <div
-        className={`my-3 row   ${
-          isSticky
-            ? darkmode
-              ? "sticky black"
-              : "sticky bg-white alligner"
+        className={`my-3 row  ${
+          isSticky && darkmode
+            ? "sticky nav"
+            : "" || isSticky
+            ? "sticky bg-white"
             : ""
         }`}
       >
-        <div className="nav-items d-flex justify-content-between align-items-center">
-          <Link to="/" className="no-underline">
+        <div className="LOGO-2">
+          <Link to="/" className="no-underline ">
             <div className="logo topper">
               <h3>BuyNest</h3>
             </div>
           </Link>
-
-          <div className="categories topper " onClick={modalOpen}>
-            <div className={`d-flex ${darkmode ? "text-white" : ""}`}>
-              <RxHamburgerMenu className="hamburg" />
-              <span className="mx-1 CATEGORIES">Categories</span>
-            </div>
-          </div>
-          {isModal && (
-            <div
-              className={`box ${
-                darkmode ? "text-white bg-dark" : "text-white bg-dark"
-              }`}
-            >
-              <div className="content">
-                <ul className="list-unstyled">
-                  <li>Accessories</li>
-                  <li>Art & Collectibles</li>
-                  <li>Baby</li>
-                  <li>Bags & Purses</li>
-                  <li>Bath & Beautify</li>
-                  <li>Books, Films & Music</li>
-                  <li>Clothing</li>
-                  <li>Craft Supplies & Tools</li>
-                  <li>Electronics & Accessories</li>
-                  <li>Gifts</li>
-                  <li>Home & Living</li>
-                  <li>Jewellery</li>
-                  <li>Paper & Party Supplies</li>
-                  <li>Pet Supplies</li>
-                  <li>Shoes</li>
-                  <li>Toys & Games</li>
-                  <li>Weddings</li>
-                </ul>
-              </div>
-            </div>
-          )}
-
-          <div className="search" onClick={handleButtonClick}>
-            {/* both if the user clicks on enter or if the user clicks on the icon */}
-            <form className="input-group form" onSubmit={handleSearch}>
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control rounded-5 input"
-                  placeholder="Search for anything"
-                  aria-label="Search"
-                  aria-describedby="search-icon"
-                  value={searchTerm}
-                  onChange={(e) => setsearchTerm(e.target.value)}
-                />
-              </div>
-              <div className="icon">
-                <CiSearch onClick={handleSearch} />
-              </div>
-            </form>
-          </div>
-
-          {authUser ? (
-            <Logout dark={darkmode} />
-          ) : (
-            <Link to="/login" className="no-underline text-black">
-              <div
-                className={`${
-                  darkmode ? "text-white" : "UserLogin content"
-                } topper topper-1`}
-              >
-                <span>Login</span>
-              </div>
-            </Link>
-          )}
-          <div className="d-flex justify-content-between align-items-center items-2 topper topper-1 same">
-            <div className="flag content">
-              <img src="/img/Flag.jfif" height={15} alt="indian flag" />
-            </div>
-
-            <div className="theme content" onClick={toggleTheme}>
-              {darkmode ? (
-                <FaRegSun className={`${darkmode ? "text-white" : ""}`} />
-              ) : (
-                <FaRegMoon />
-              )}
-            </div>
-
-            <div className="giftIcon content">
-              <BsGift className={`${darkmode ? "text-white" : ""}`} />
-            </div>
-
-            <div className="kart content" onClick={handleButtonClick}>
-              <Link to="/cart" className="cart-decoration">
-                <BsCart className={`${darkmode ? "text-white" : ""}`} />
-              </Link>
-            </div>
-          </div>
         </div>
-        <div className="content">
-          <div
-            className={`items d-flex justify-content-center my-2 mb-3  ${
-              darkmode ? "text-white" : ""
-            }`}
-          >
-            <li>
-              <span>
-                <GoGift />
-              </span>{" "}
-              Gift Mode
-            </li>
-            <li>Shop Birthday Gifts</li>
-            <li>Home Favourites</li>
-            <li>Fashion Finds</li>
-            <li>Registry</li>
-          </div>
-        </div>
+
         <hr className={`${darkmode ? "text-white" : ""} line`} />
       </div>
       <div className="container border shadow rounded d-flex flex-column justify-content-center align-items-center col-md-4 mt-5 login">
