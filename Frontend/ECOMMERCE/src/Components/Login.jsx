@@ -105,7 +105,7 @@ const Login = () => {
       >
         <div className="LOGO-2">
           <Link to="/" className="no-underline ">
-            <div className="logo topper">
+            <div className="logo">
               <h3>BuyNest</h3>
             </div>
           </Link>
