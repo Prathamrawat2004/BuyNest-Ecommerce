@@ -92,12 +92,12 @@ const CheckoutSuccess = () => {
       >
         <div className="nav-items d-flex justify-content-between align-items-center">
           <Link to="/" className="no-underline">
-            <div className="logo">
+            <div className="logo LOGO-1">
               <h3>BuyNest</h3>
             </div>
           </Link>
 
-          <div className="categories" onClick={modalOpen}>
+          <div className="categories CHECKOUT" onClick={modalOpen}>
             <div className={`d-flex ${darkmode ? "text-white" : ""}`}>
               <RxHamburgerMenu className="hamburg" />
               <h6 className="mx-1">Categories</h6>
@@ -133,7 +133,7 @@ const CheckoutSuccess = () => {
             </div>
           )}
 
-          <div className="search" onClick={handleButtonClick}>
+          <div className="search CHECKOUT" onClick={handleButtonClick}>
             {/* both if the user clicks on enter or if the user clicks on the icon */}
             <form className="input-group" onSubmit={handleSearch}>
               <div className="input-group">
@@ -153,23 +153,25 @@ const CheckoutSuccess = () => {
             </form>
           </div>
 
-          {authUser ? (
-            <Logout dark={darkmode} />
-          ) : (
-            <Link to="/login" className="no-underline text-black">
-              <div
-                className={`${darkmode ? "text-white" : "UserLogin content"}`}
-              >
-                <span>Login</span>
-              </div>
-            </Link>
-          )}
+          <div className="CHECKOUT">
+            {authUser ? (
+              <Logout dark={darkmode} />
+            ) : (
+              <Link to="/login" className="no-underline text-black ">
+                <div
+                  className={`${darkmode ? "text-white" : "UserLogin content"}`}
+                >
+                  <span>Login</span>
+                </div>
+              </Link>
+            )}
+          </div>
           <div className="d-flex justify-content-between align-items-center items-2">
-            <div className="flag content">
+            <div className="flag content CHECKOUT">
               <img src="/img/Flag.jfif" height={15} alt="indian flag" />
             </div>
 
-            <div className="theme content" onClick={toggleTheme}>
+            <div className="theme content CHECKOUT" onClick={toggleTheme}>
               {darkmode ? (
                 <FaRegSun className={`${darkmode ? "text-white" : ""}`} />
               ) : (
@@ -177,11 +179,11 @@ const CheckoutSuccess = () => {
               )}
             </div>
 
-            <div className="giftIcon content">
+            <div className="giftIcon content CHECKOUT">
               <BsGift className={`${darkmode ? "text-white" : ""}`} />
             </div>
 
-            <div className="kart content" onClick={handleButtonClick}>
+            <div className="kart content CHECKOUT" onClick={handleButtonClick}>
               <Link to="/cart" className="cart-decoration">
                 <BsCart className={`${darkmode ? "text-white" : ""}`} />
               </Link>

@@ -105,10 +105,10 @@ const SearchRes = () => {
       {/* navbar */}
       <div
         className={`my-3 row   ${
-          isSticky && darkmode
-            ? "sticky black"
-            : "" || isSticky
-            ? "sticky bg-white alligner"
+          isSticky
+            ? darkmode
+              ? "sticky black"
+              : "sticky bg-white alligner"
             : ""
         }`}
       >
@@ -119,10 +119,10 @@ const SearchRes = () => {
             </div>
           </Link>
 
-          <div className="categories topper topper-1" onClick={modalOpen}>
+          <div className="categories topper " onClick={modalOpen}>
             <div className={`d-flex ${darkmode ? "text-white" : ""}`}>
               <RxHamburgerMenu className="hamburg" />
-              <h6 className="mx-1">Categories</h6>
+              <span className="mx-1 CATEGORIES">Categories</span>
             </div>
           </div>
           {isModal && (
@@ -132,7 +132,7 @@ const SearchRes = () => {
               }`}
             >
               <div className="content">
-                <ul className="list-unstyled ">
+                <ul className="list-unstyled">
                   <li>Accessories</li>
                   <li>Art & Collectibles</li>
                   <li>Baby</li>
@@ -155,9 +155,9 @@ const SearchRes = () => {
             </div>
           )}
 
-          <div className="search">
+          <div className="search" onClick={handleButtonClick}>
             {/* both if the user clicks on enter or if the user clicks on the icon */}
-            <form className="input-group" onSubmit={handleSearch}>
+            <form className="input-group form" onSubmit={handleSearch}>
               <div className="input-group">
                 <input
                   type="text"
@@ -188,7 +188,7 @@ const SearchRes = () => {
               </div>
             </Link>
           )}
-          <div className="d-flex justify-content-between align-items-center items-2  topper topper-1 same">
+          <div className="d-flex justify-content-between align-items-center items-2 topper topper-1 same">
             <div className="flag content">
               <img src="/img/Flag.jfif" height={15} alt="indian flag" />
             </div>
@@ -214,7 +214,7 @@ const SearchRes = () => {
         </div>
         <div className="content">
           <div
-            className={`items d-flex items justify-content-center my-2 mb-3  ${
+            className={`items d-flex justify-content-center my-2 mb-3  ${
               darkmode ? "text-white" : ""
             }`}
           >

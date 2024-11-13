@@ -108,10 +108,10 @@ const Maximalist = () => {
       {/* navbar */}
       <div
         className={`my-3 row   ${
-          isSticky && darkmode
-            ? "sticky black"
-            : "" || isSticky
-            ? "sticky bg-white alligner"
+          isSticky
+            ? darkmode
+              ? "sticky black"
+              : "sticky bg-white alligner"
             : ""
         }`}
       >
@@ -122,10 +122,10 @@ const Maximalist = () => {
             </div>
           </Link>
 
-          <div className="categories topper topper-1" onClick={modalOpen}>
+          <div className="categories topper " onClick={modalOpen}>
             <div className={`d-flex ${darkmode ? "text-white" : ""}`}>
               <RxHamburgerMenu className="hamburg" />
-              <h6 className="mx-1">Categories</h6>
+              <span className="mx-1 CATEGORIES">Categories</span>
             </div>
           </div>
           {isModal && (
@@ -160,7 +160,7 @@ const Maximalist = () => {
 
           <div className="search" onClick={handleButtonClick}>
             {/* both if the user clicks on enter or if the user clicks on the icon */}
-            <form className="input-group" onSubmit={handleSearch}>
+            <form className="input-group form" onSubmit={handleSearch}>
               <div className="input-group">
                 <input
                   type="text"
@@ -217,7 +217,7 @@ const Maximalist = () => {
         </div>
         <div className="content">
           <div
-            className={`items d-flex items justify-content-center my-2 mb-3  ${
+            className={`items d-flex justify-content-center my-2 mb-3  ${
               darkmode ? "text-white" : ""
             }`}
           >

@@ -101,7 +101,7 @@ const Navbar = () => {
           <div className="categories topper " onClick={modalOpen}>
             <div className={`d-flex ${darkmode ? "text-white" : ""}`}>
               <RxHamburgerMenu className="hamburg" />
-              <span className="mx-1">Categories</span>
+              <span className="mx-1 CATEGORIES">Categories</span>
             </div>
           </div>
           {isModal && (
